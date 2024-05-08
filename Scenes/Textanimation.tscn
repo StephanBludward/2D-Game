@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://djuccx78ugyno"]
+
+[ext_resource type="Script" path="res://scripts/Start_text.gd" id="1_qtryx"]
+[ext_resource type="FontFile" uid="uid://di60wv0c435ur" path="res://assets/HowlingNightmare.otf" id="2_7ceqh"]
+
+[sub_resource type="Animation" id="Animation_5cc47"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/text1:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ypp85"]
+resource_name = "textani"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/text1:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_text"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h3tcu"]
+_data = {
+"RESET": SubResource("Animation_5cc47"),
+"textani": SubResource("Animation_ypp85")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enk37"]
+size = Vector2(17.5, 454)
+
+[node name="Animated_text" type="Node2D"]
+position = Vector2(53, 43)
+script = ExtResource("1_qtryx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="text1" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -26.5
+offset_right = 196.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme_override_fonts/font = ExtResource("2_7ceqh")
+theme_override_font_sizes/font_size = 25
+text = "This world is not the same
+anymore"
+horizontal_alignment = 1
+vertical_alignment = 2
+clip_text = true
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h3tcu")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_enk37")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

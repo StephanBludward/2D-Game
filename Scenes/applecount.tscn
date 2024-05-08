@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdl8kxjj3035x"]
+
+[ext_resource type="PackedScene" uid="uid://d35gjmm8vajbw" path="res://Scenes/apple.tscn" id="1_q5u34"]
+
+[node name="Node" type="Node"]
+
+[node name="Apple" parent="." instance=ExtResource("1_q5u34")]

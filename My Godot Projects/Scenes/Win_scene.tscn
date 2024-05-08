@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt87tmwmic7v8"]
+
+[ext_resource type="Texture2D" uid="uid://nwxiuevs5h3k" path="res://Assets/CompressJPEG.online_512x512_image (1).jpg" id="1_i35sh"]
+[ext_resource type="Texture2D" uid="uid://don4fctwlr00g" path="res://Assets/Cool Text - You won 455931072214634.png" id="2_7r1le"]
+
+[node name="WinScene" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i35sh")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = -592.0
+offset_top = 150.0
+offset_right = -152.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 60
+text = "You won"
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 72.0
+offset_right = 1108.0
+offset_bottom = 364.0
+texture = ExtResource("2_7r1le")

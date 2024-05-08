@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://drcnsmkrpy53w"]
+
+[ext_resource type="Script" path="res://scripts/1place.gd" id="1_aummc"]
+[ext_resource type="PackedScene" uid="uid://d35gjmm8vajbw" path="res://Scenes/apple.tscn" id="1_wldax"]
+[ext_resource type="PackedScene" uid="uid://6ja5820x8siq" path="res://Scenes/temple.tscn" id="2_xfq2p"]
+[ext_resource type="PackedScene" uid="uid://tlrlsmgd2my8" path="res://Scenes/Owl.tscn" id="3_21djl"]
+[ext_resource type="PackedScene" uid="uid://cuvpd80ixpgh2" path="res://Scenes/zombie.tscn" id="4_h40bp"]
+[ext_resource type="PackedScene" uid="uid://csnhh102yaijs" path="res://Scenes/apple_num.tscn" id="4_wwph0"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_aummc")
+
+[node name="Apple" parent="." instance=ExtResource("1_wldax")]
+position = Vector2(927, -15)
+
+[node name="Apple8" parent="." instance=ExtResource("1_wldax")]
+position = Vector2(-128, -176)
+
+[node name="Apple9" parent="." instance=ExtResource("1_wldax")]
+position = Vector2(-137, 20)
+
+[node name="Apple7" parent="." instance=ExtResource("1_wldax")]
+position = Vector2(672, -127)
+
+[node name="Apple2" parent="." instance=ExtResource("1_wldax")]
+position = Vector2(904, -191)
+
+[node name="Apple3" parent="." instance=ExtResource("1_wldax")]
+position = Vector2(788, -81)
+
+[node name="Apple4" parent="." instance=ExtResource("1_wldax")]
+position = Vector2(527, -32)
+
+[node name="Apple5" parent="." instance=ExtResource("1_wldax")]
+position = Vector2(235, -17)
+
+[node name="Apple6" parent="." instance=ExtResource("1_wldax")]
+position = Vector2(74, -126)
+
+[node name="TileMap" parent="." instance=ExtResource("2_xfq2p")]
+
+[node name="Owl" parent="." instance=ExtResource("3_21djl")]
+position = Vector2(-78, -143)
+
+[node name="AppleNum" parent="." instance=ExtResource("4_wwph0")]
+
+[node name="Zombie" parent="." instance=ExtResource("4_h40bp")]
+position = Vector2(301, -217)
+
+[node name="Zombie2" parent="." instance=ExtResource("4_h40bp")]
+position = Vector2(66, -118)
+
+[node name="Zombie3" parent="." instance=ExtResource("4_h40bp")]
+position = Vector2(186, -9)
+
+[node name="Zombie4" parent="." instance=ExtResource("4_h40bp")]
+position = Vector2(178, 107)
+
+[node name="Zombie5" parent="." instance=ExtResource("4_h40bp")]
+position = Vector2(594, -156)
+
+[node name="Zombie6" parent="." instance=ExtResource("4_h40bp")]
+position = Vector2(576, 22)
+
+[node name="Zombie7" parent="." instance=ExtResource("4_h40bp")]
+position = Vector2(906, -184)
+
+[node name="Zombie8" parent="." instance=ExtResource("4_h40bp")]
+position = Vector2(845, -95)
